@@ -4,6 +4,7 @@
     background: url(./header_img.png) no-repeat;
     background-size: cover;
     position: relative;
+    border-radius: 20px;
 }
 
 .header-contents{
@@ -40,4 +41,5 @@
     background-color: white;
     font-size: max(1.05vw, 15px);
     border-radius: 50px;
+    cursor: pointer;
 }

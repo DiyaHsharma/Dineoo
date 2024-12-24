@@ -1,5 +1,6 @@
 import basket_icon from './basket_icon.png'
 import logo from './logo.png'
+import footerlogo from './footerlogo.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 import menu_1 from './menu_1.png'
@@ -62,6 +63,7 @@ import parcel_icon from './parcel_icon.png'
 
 export const assets = {
     logo,
+    footerlogo,
     basket_icon,
     header_img,
     search_icon,
@@ -238,28 +240,28 @@ export const food_list = [
         image: food_17,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
+        category: "Cakes"
     }, {
         _id: "18",
         name: "Vegan Cake",
         image: food_18,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
+        category: "Cakes"
     }, {
         _id: "19",
         name: "Butterscotch Cake",
         image: food_19,
         price: 20,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
+        category: "Cakes"
     }, {
         _id: "20",
-        name: "Sliced Cake",
+        name: "Sliced Cakes",
         image: food_20,
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
+        category: "Cakes"
     }, {
         _id: "21",
         name: "Garlic Mushroom ",
