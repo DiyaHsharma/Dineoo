@@ -66,6 +66,8 @@
 
 .cart-promocode p{
     color: #f3618f;
+    font-weight: 500;
+    font-size: 18px;
 }
 .cart-promocode-input{
     margin-top: 10px;
