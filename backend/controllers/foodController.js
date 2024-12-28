@@ -1,31 +1,32 @@
 import foodModel from "../models/foodModel.js";
-import path from "path";
 
+// Add food item
 const addFood = async (req, res) => {
     try {
-        // Debugging: Check if file is received
-        console.log("File received:", req.file);
+        // Log the file details to debug
+        console.log("Request Body:", req.body);
+        console.log("File Metadata:", req.file);
 
         if (!req.file) {
             return res.status(400).json({ success: false, message: "No image uploaded" });
         }
 
-        // Construct relative path
-        const relativePath = `uploads/${req.file.filename}`;
+        // Store the image file path
+        const image_filename = req.file.path;
 
-        // Create new food entry
+        // Save to database
         const food = new foodModel({
             name: req.body.name,
             description: req.body.description,
             price: req.body.price,
             category: req.body.category,
-            image: relativePath, // Store relative path in DB
+            image: image_filename,
         });
 
         await food.save();
         res.json({ success: true, message: "Food added successfully" });
     } catch (error) {
-        console.error("Error adding food item:", error);
+        console.error("Error:", error);
         res.status(500).json({ success: false, message: "Error adding food item" });
     }
 };
