@@ -24,3 +24,12 @@ Content-Type: image/png
 < C:/Users/diyas/Desktop/Dineoo/frontend/src/assets/food_5.png
 
 --boundary123--
+GET http://localhost:4000/api/food/list
+
+--boundary123--
+POST http://localhost:4000/api/food/remove
+Content-Type: application/json
+
+{
+    "id": "677059b1859a60d5adf82d78"
+}
