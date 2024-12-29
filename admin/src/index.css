@@ -22,3 +22,7 @@ hr{
   height: 1px;
   background-color: #f3618f;
 }
+
+.app-content{
+  display: flex;
+}
