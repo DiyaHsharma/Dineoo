@@ -5,30 +5,31 @@ import path from 'path';
 // Add food item
 const addFood = async (req, res) => {
     try {
-        console.log("Request Body:", req.body);
-        console.log("File Metadata:", req.file);
-
-        if (!req.file) {
-            return res.status(400).json({ success: false, message: "No image uploaded" });
-        }
-
-        const image_filename = req.file.path;
-
-        const food = new foodModel({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            category: req.body.category,
-            image: image_filename,
-        });
-
-        await food.save();
-        res.json({ success: true, message: "Food added successfully" });
+      console.log("Request Body:", req.body);
+      console.log("File Metadata:", req.file);
+  
+      if (!req.file) {
+        return res.status(400).json({ success: false, message: "No image uploaded" });
+      }
+  
+      const image_filename = `uploads/${req.file.filename}`; 
+  
+      const food = new foodModel({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        category: req.body.category,
+        image: image_filename,
+      });
+  
+      await food.save();
+      res.json({ success: true, message: "Food added successfully" });
     } catch (error) {
-        console.error("Error:", error);
-        res.status(500).json({ success: false, message: "Error adding food item" });
+      console.error("Error:", error);
+      res.status(500).json({ success: false, message: "Error adding food item" });
     }
-};
+  };
+  
 
 // List all food items
 const listFood = async (req, res) => {
